@@ -22,6 +22,14 @@ class TeacherController extends Controller
             'title'=>'Verified Your Mail '
         ];
         Mail::to('16103358@gmail.com')->send(new \App\Mail\Teacher($details));
-        return back();
+       return redirect()->route('teacher.index');
+    }
+
+    public function show()
+    {
+        $data=[
+            'teachers'=>Teacher::all()
+        ];
+        return view('teacher.index',$data);
     }
 }

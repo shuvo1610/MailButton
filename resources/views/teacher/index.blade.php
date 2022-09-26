@@ -13,19 +13,22 @@
                             <table class="table table-stripe">
                                 <thead>
                                 <tr>
+                                    <td>#</td>
                                     <td>Name</td>
                                     <td>Phone</td>
-                                    <td>Email</td>
                                     <td>Address</td>
                                 </tr>
                                 </thead>
+                                @foreach($teachers as $teacher)
                                 <tr>
-                                    <td>{{ $name }}</td>
-                                    <td>{{ $phone }}</td>
-                                    <td>{{ $email }}</td>
-                                    <td>{{ $address }}</td>
+                                    <td>{{$teacher['id']}}</td>
+                                    <td>{{ $teacher['name'] }}</td>
+                                    <td>{{ $teacher['phone'] }}</td>
+                                    <td>{{ $teacher['address'] }}</td>
                                 </tr>
-                            </table>
+                                @endforeach
+                            </table><br>
+                            <a href="{{route('teacher.registration')}}" class="button" type="button" style="background-color:#4CAF50;display:inline-block;padding: 10px 25px;color:white;text-decoration:none;">Back</a>
                         </div>
                     </div>
                 </div>
